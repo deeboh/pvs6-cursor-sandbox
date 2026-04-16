@@ -8,21 +8,9 @@
       "ports": [4010]
     },
     {
-      "name": "mock-pvs6-feed",
-      "command": ". .venv/bin/activate && python scripts/mock_pvs6_feed.py",
+      "name": "pvs6-feed",
+      "command": ". .venv/bin/activate && PVS6_MONITORING_URL=http://localhost:5173/ python scripts/pvs6_feed.py",
       "ports": [4020]
     }
-  ],
-  "env": {
-    "RUN_MODE": "sandbox",
-    "PVS6_FEED_URL": "http://127.0.0.1:4020/telemetry/today",
-    "SOCIAL_API_URL": "http://127.0.0.1:4010",
-    "STAGING_DASHBOARD_URL": "https://staging.example.com/pvs6",
-    "SOCIAL_PUBLISH_MODE": "draft-only",
-    "LOG_DIR": "./logs"
-  },
-  "persistedDirectories": [
-    ".venv",
-    "logs"
   ]
 }
