@@ -1,0 +1,26 @@
+{
+  "network": {
+    "mode": "allowlist",
+    "allow": [
+      "127.0.0.1",
+      "localhost",
+      "api.openai.com",
+      "cursor.sh"
+    ]
+  },
+  "filesystem": {
+    "read": [
+      "."
+    ],
+    "write": [
+      "./logs",
+      "./data",
+      "./agents",
+      "./scripts"
+    ],
+    "denyWrite": [
+      "./.git",
+      "./.cursor"
+    ]
+  }
+}

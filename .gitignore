@@ -1,0 +1,39 @@
+# Virtual environments (recreate with: python3 -m venv .venv && pip install -r requirements.txt)
+.venv/
+venv/
+ENV/
+
+# Runtime logs and drafts (LOG_DIR default ./logs)
+logs/
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Tooling / test caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# Local env files (may hold secrets; python-dotenv)
+.env
+.env.local
+.env.*.local
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~

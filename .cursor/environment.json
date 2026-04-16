@@ -1,0 +1,28 @@
+{
+  "name": "pvs6-social-sandbox",
+  "install": "python3 -m venv .venv && . .venv/bin/activate && pip install --upgrade pip && pip install flask requests python-dotenv",
+  "terminals": [
+    {
+      "name": "mock-social-api",
+      "command": ". .venv/bin/activate && python scripts/mock_social_api.py",
+      "ports": [4010]
+    },
+    {
+      "name": "mock-pvs6-feed",
+      "command": ". .venv/bin/activate && python scripts/mock_pvs6_feed.py",
+      "ports": [4020]
+    }
+  ],
+  "env": {
+    "RUN_MODE": "sandbox",
+    "PVS6_FEED_URL": "http://127.0.0.1:4020/telemetry/today",
+    "SOCIAL_API_URL": "http://127.0.0.1:4010",
+    "STAGING_DASHBOARD_URL": "https://staging.example.com/pvs6",
+    "SOCIAL_PUBLISH_MODE": "draft-only",
+    "LOG_DIR": "./logs"
+  },
+  "persistedDirectories": [
+    ".venv",
+    "logs"
+  ]
+}
